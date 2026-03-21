@@ -1,0 +1,91 @@
+widget = {
+	allow_outside = yes
+	name = "agot_bank_policy_matrix_widget"
+	size = { 900 320 }
+
+	vbox = {
+		layoutpolicy_horizontal = expanding
+		layoutpolicy_vertical = expanding
+		spacing = 6
+
+		text_single = {
+			text = agot_bank_dashboard_policy_widget_title
+			default_format = "#high"
+			fontsize = 24
+			fontsize_min = 14
+			align = center
+			max_width = 860
+		}
+
+		text_single = {
+			text = agot_bank_dashboard_policy_widget_projection
+			default_format = "#medium"
+			align = center
+			max_width = 860
+		}
+
+		text_single = {
+			text = agot_bank_dashboard_policy_widget_header
+			default_format = "#bold"
+			align = left
+			max_width = 860
+		}
+
+		text_single = {
+			text = agot_bank_dashboard_policy_row_interest_low
+			using = Font_Size_Medium
+			align = left
+			max_width = 860
+		}
+		text_single = {
+			text = agot_bank_dashboard_policy_row_interest_mid
+			using = Font_Size_Medium
+			align = left
+			max_width = 860
+		}
+		text_single = {
+			text = agot_bank_dashboard_policy_row_interest_high
+			using = Font_Size_Medium
+			align = left
+			max_width = 860
+		}
+
+		text_single = {
+			text = agot_bank_dashboard_policy_row_approval_restrict
+			using = Font_Size_Medium
+			align = left
+			max_width = 860
+		}
+		text_single = {
+			text = agot_bank_dashboard_policy_row_approval_balanced
+			using = Font_Size_Medium
+			align = left
+			max_width = 860
+		}
+		text_single = {
+			text = agot_bank_dashboard_policy_row_approval_aggressive
+			using = Font_Size_Medium
+			align = left
+			max_width = 860
+		}
+
+		text_single = {
+			text = agot_bank_dashboard_policy_row_dividend_high
+			using = Font_Size_Medium
+			align = left
+			max_width = 860
+		}
+		text_single = {
+			text = agot_bank_dashboard_policy_row_dividend_balanced
+			using = Font_Size_Medium
+			align = left
+			max_width = 860
+		}
+		text_single = {
+			text = agot_bank_dashboard_policy_row_dividend_reinvest
+			using = Font_Size_Medium
+			align = left
+			max_width = 860
+		}
+	}
+}

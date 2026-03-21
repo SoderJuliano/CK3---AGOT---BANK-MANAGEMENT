@@ -1,0 +1,226 @@
+widget = {
+	allow_outside = yes
+	name = "agot_bank_dashboard_widget"
+	size = { 900 460 }
+
+	hbox = {
+		allow_outside = yes
+		layoutpolicy_horizontal = expanding
+		layoutpolicy_vertical = expanding
+		spacing = 10
+
+		vbox = {
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			spacing = 8
+
+			text_single = {
+				text = agot_bank_dashboard_widget_bank_title
+				default_format = "#high"
+				fontsize = 28
+				fontsize_min = 16
+				align = center
+				max_width = 560
+			}
+
+			text_single = {
+				text = agot_bank_dashboard_widget_kpi_line
+				default_format = "#medium"
+				align = center
+				max_width = 560
+			}
+
+			text_single = {
+				text = agot_bank_dashboard_widget_kpi_line_2
+				default_format = "#medium"
+				align = center
+				max_width = 560
+			}
+
+			text_single = {
+				text = agot_bank_dashboard_widget_graph_header
+				default_format = "#bold"
+				align = left
+				max_width = 560
+			}
+
+			text_single = {
+				text = agot_bank_dashboard_widget_graph_values_a
+				default_format = "#weak"
+				align = left
+				max_width = 560
+			}
+
+			text_single = {
+				text = agot_bank_dashboard_widget_graph_values_b
+				default_format = "#weak"
+				align = left
+				max_width = 560
+			}
+
+			text_single = {
+				text = agot_bank_dashboard_widget_cards_header
+				default_format = "#bold"
+				align = left
+				max_width = 560
+			}
+
+			scrollbox = {
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+
+				blockoverride "scrollbox_content"
+				{
+					vbox = {
+						datamodel = "[GetPlayer.MakeScope.GetList('agot_dash_debtors_list')]"
+						layoutpolicy_horizontal = expanding
+
+						item = {
+							button_standard = {
+								name = "debtor_card"
+								size = { 540 90 }
+								using = tooltip_ws
+								layoutpolicy_vertical = expanding
+								datacontext = "[Scope.GetCharacter]"
+
+								tooltipwidget = {
+									tooltip_type = {
+										blockoverride "interaction_info" {
+											text = "CHARACTER_TOOLTIP_INSTRUCTION"
+										}
+									}
+								}
+								tooltip_offset = { 0 0 }
+								tooltip_verticalbehavior = slide
+								tooltip_horizontalbehavior = mirror
+
+								portrait_head_small = {
+									scale = 0.75
+									tooltip_visible = no
+								}
+
+								text_single = {
+									name = "debtor_name"
+									text = "agot_bank_dashboard_debtor_name"
+									fontsize = 20
+									fontsize_min = 14
+									align = left
+									max_width = 420
+									position = { 72 4 }
+								}
+								text_single = {
+									name = "debtor_line_one"
+									text = "agot_bank_dashboard_debtor_line_1"
+									using = Font_Size_Medium
+									align = left
+									max_width = 440
+									position = { 72 32 }
+								}
+								text_single = {
+									name = "debtor_line_two"
+									text = "agot_bank_dashboard_debtor_line_2"
+									using = Font_Size_Medium
+									align = left
+									max_width = 440
+									position = { 72 54 }
+								}
+								expand = {}
+							}
+						}
+						expand = {}
+					}
+				}
+			}
+		}
+
+		vbox = {
+			size = { 320 456 }
+			spacing = 8
+
+			text_single = {
+				text = agot_bank_dashboard_widget_manager_header
+				default_format = "#bold"
+				align = center
+				max_width = 300
+			}
+
+			vbox = {
+				datamodel = "[GetPlayer.MakeScope.GetList('agot_dash_manager_list')]"
+				layoutpolicy_horizontal = expanding
+				item = {
+					button_standard = {
+						name = "manager_card"
+						size = { 300 110 }
+						using = tooltip_ws
+						datacontext = "[Scope.GetCharacter]"
+
+						portrait_head_small = {
+							scale = 1
+							position = { 6 8 }
+							tooltip_visible = no
+						}
+						text_single = {
+							text = "agot_bank_dashboard_manager_name"
+							fontsize = 20
+							fontsize_min = 14
+							align = left
+							max_width = 200
+							position = { 95 16 }
+						}
+						text_single = {
+							text = "agot_bank_dashboard_manager_stats"
+							using = Font_Size_Medium
+							align = left
+							max_width = 200
+							position = { 95 46 }
+						}
+					}
+				}
+			}
+
+			text_single = {
+				text = agot_bank_dashboard_widget_incoming_header
+				default_format = "#bold"
+				align = center
+				max_width = 300
+			}
+
+			scrollbox = {
+				size = { 310 280 }
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+
+				blockoverride "scrollbox_content"
+				{
+					vbox = {
+						datamodel = "[GetPlayer.MakeScope.GetList('agot_dash_incoming_list')]"
+						layoutpolicy_horizontal = expanding
+						item = {
+							button_standard = {
+								name = "incoming_card"
+								size = { 286 64 }
+								using = tooltip_ws
+								datacontext = "[Scope.GetCharacter]"
+
+								text_single = {
+									text = "agot_bank_dashboard_incoming_line_1"
+									using = Font_Size_Medium
+									align = left
+									max_width = 270
+									position = { 10 12 }
+								}
+								text_single = {
+									text = "agot_bank_dashboard_incoming_line_2"
+									using = Font_Size_Medium
+									align = left
+									max_width = 270
+									position = { 10 34 }
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

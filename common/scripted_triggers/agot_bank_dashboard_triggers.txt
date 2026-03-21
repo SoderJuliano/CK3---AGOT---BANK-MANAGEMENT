@@ -1,0 +1,33 @@
+agot_bank_dashboard_can_view_trigger = {
+    OR = {
+        has_character_flag = IB_Director
+        has_character_flag = bank1_Director
+        has_character_flag = bank2_Director
+        has_character_flag = bank3_Director
+        AND = {
+            has_variable = IB_Shares
+            var:IB_Shares > 0
+        }
+        AND = {
+            has_variable = bank1_Shares
+            var:bank1_Shares > 0
+        }
+        AND = {
+            has_variable = bank2_Shares
+            var:bank2_Shares > 0
+        }
+        AND = {
+            has_variable = bank3_Shares
+            var:bank3_Shares > 0
+        }
+    }
+}
+
+agot_bank_dashboard_can_manage_trigger = {
+    OR = {
+        has_character_flag = IB_Director
+        has_character_flag = bank1_Director
+        has_character_flag = bank2_Director
+        has_character_flag = bank3_Director
+    }
+}

@@ -1,0 +1,24 @@
+agot_bank_dashboard_decision = {
+    picture = "gfx/interface/illustrations/decisions/decision_generic.dds"
+    desc = agot_bank_dashboard_decision_desc
+    decision_group_type = banking
+
+    is_shown = {
+        is_ai = no
+        is_adult = yes
+        agot_bank_dashboard_can_view_trigger = yes
+    }
+
+    is_valid = {
+        is_alive = yes
+        agot_bank_dashboard_can_view_trigger = yes
+    }
+
+    effect = {
+        trigger_event = agot_bank_dashboard.0001
+    }
+
+    ai_potential = {
+        always = no
+    }
+}
