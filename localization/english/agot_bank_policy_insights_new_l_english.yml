@@ -1,6 +1,6 @@
 ﻿l_english:
- agot_bank_dashboard_policy_widget_title: "Policy Insights — [ROOT.Custom('agot_dash_selected_bank_name')]"
- agot_bank_dashboard_policy_widget_projection: "Projected range: [ROOT.Var('agot_dash_project_min').GetValue|0]% to [ROOT.Var('agot_dash_project_max').GetValue|0]%"
+ agot_bank_dashboard_policy_widget_title: "Policy Insights — [GetPlayer.Custom('agot_dash_selected_bank_name')]"
+ agot_bank_dashboard_policy_widget_projection: "Projected range: [GetPlayer.Var('agot_dash_project_min').GetValue|0]% to [GetPlayer.Var('agot_dash_project_max').GetValue|0]%"
  agot_dash_policy_col_category: "POLICY CATEGORY"
  agot_dash_policy_col_level: "LEVEL"
  agot_dash_policy_col_impact: "EXPECTED IMPACT"
