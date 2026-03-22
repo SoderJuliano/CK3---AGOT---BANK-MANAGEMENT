@@ -1,0 +1,187 @@
+﻿widget = {
+allow_outside = yes
+name = "agot_bank_policy_insights_new"
+size = { 860 360 }
+
+vbox = {
+layoutpolicy_horizontal = expanding
+layoutpolicy_vertical = expanding
+spacing = 10
+margin = { 14 10 14 10 }
+
+# HEADER
+vbox = {
+layoutpolicy_horizontal = expanding
+layoutpolicy_vertical = preferred
+spacing = 3
+
+text_single = {
+text = agot_bank_dashboard_policy_widget_title
+fontsize = 18
+fontsize_min = 14
+default_format = "#high"
+align = left
+}
+
+text_single = {
+text = agot_bank_dashboard_policy_widget_projection
+fontsize = 10
+fontsize_min = 8
+default_format = "#medium"
+align = left
+}
+}
+
+divider_light = {
+layoutpolicy_horizontal = expanding
+size = { 0 1 }
+}
+
+# TABLE HEADER
+hbox = {
+layoutpolicy_horizontal = expanding
+layoutpolicy_vertical = preferred
+spacing = 8
+margin = { 4 0 4 0 }
+
+text_single = {
+size = { 150 0 }
+text = agot_dash_policy_col_category
+fontsize = 10
+fontsize_min = 8
+default_format = "#bold"
+align = left
+}
+text_single = {
+size = { 100 0 }
+text = agot_dash_policy_col_level
+fontsize = 10
+fontsize_min = 8
+default_format = "#bold"
+align = left
+}
+text_single = {
+layoutpolicy_horizontal = expanding
+text = agot_dash_policy_col_impact
+fontsize = 10
+fontsize_min = 8
+default_format = "#bold"
+align = left
+}
+}
+
+divider_light = {
+layoutpolicy_horizontal = expanding
+size = { 0 1 }
+}
+
+# TABLE ROWS
+scrollbox = {
+layoutpolicy_horizontal = expanding
+layoutpolicy_vertical = expanding
+
+blockoverride "scrollbox_content" {
+vbox = {
+layoutpolicy_horizontal = expanding
+spacing = 0
+
+# --- INTEREST RATES ---
+hbox = {
+layoutpolicy_horizontal = expanding
+layoutpolicy_vertical = preferred
+spacing = 8
+margin = { 4 4 4 4 }
+background = "gfx/interface/window_background_2"
+text_single = { size = { 150 0 } text = agot_dash_policy_cat_interest fontsize = 10 default_format = "#medium" align = left }
+text_single = { size = { 100 0 } text = agot_dash_policy_lvl_low fontsize = 10 default_format = "#accent" align = left }
+text_single = { layoutpolicy_horizontal = expanding text = agot_bank_dashboard_policy_row_interest_low fontsize = 10 default_format = "#weak" align = left }
+}
+hbox = {
+layoutpolicy_horizontal = expanding
+layoutpolicy_vertical = preferred
+spacing = 8
+margin = { 4 4 4 4 }
+text_single = { size = { 150 0 } text = "" fontsize = 10 align = left }
+text_single = { size = { 100 0 } text = agot_dash_policy_lvl_medium fontsize = 10 default_format = "#good" align = left }
+text_single = { layoutpolicy_horizontal = expanding text = agot_bank_dashboard_policy_row_interest_mid fontsize = 10 default_format = "#weak" align = left }
+}
+hbox = {
+layoutpolicy_horizontal = expanding
+layoutpolicy_vertical = preferred
+spacing = 8
+margin = { 4 4 4 4 }
+background = "gfx/interface/window_background_2"
+text_single = { size = { 150 0 } text = "" fontsize = 10 align = left }
+text_single = { size = { 100 0 } text = agot_dash_policy_lvl_high fontsize = 10 default_format = "#warning" align = left }
+text_single = { layoutpolicy_horizontal = expanding text = agot_bank_dashboard_policy_row_interest_high fontsize = 10 default_format = "#weak" align = left }
+}
+
+divider_light = { layoutpolicy_horizontal = expanding size = { 0 1 } }
+
+# --- LOAN APPROVAL ---
+hbox = {
+layoutpolicy_horizontal = expanding
+layoutpolicy_vertical = preferred
+spacing = 8
+margin = { 4 4 4 4 }
+text_single = { size = { 150 0 } text = agot_dash_policy_cat_loans fontsize = 10 default_format = "#medium" align = left }
+text_single = { size = { 100 0 } text = agot_dash_policy_lvl_restrictive fontsize = 10 default_format = "#accent" align = left }
+text_single = { layoutpolicy_horizontal = expanding text = agot_bank_dashboard_policy_row_approval_restrict fontsize = 10 default_format = "#weak" align = left }
+}
+hbox = {
+layoutpolicy_horizontal = expanding
+layoutpolicy_vertical = preferred
+spacing = 8
+margin = { 4 4 4 4 }
+background = "gfx/interface/window_background_2"
+text_single = { size = { 150 0 } text = "" fontsize = 10 align = left }
+text_single = { size = { 100 0 } text = agot_dash_policy_lvl_balanced fontsize = 10 default_format = "#good" align = left }
+text_single = { layoutpolicy_horizontal = expanding text = agot_bank_dashboard_policy_row_approval_balanced fontsize = 10 default_format = "#weak" align = left }
+}
+hbox = {
+layoutpolicy_horizontal = expanding
+layoutpolicy_vertical = preferred
+spacing = 8
+margin = { 4 4 4 4 }
+text_single = { size = { 150 0 } text = "" fontsize = 10 align = left }
+text_single = { size = { 100 0 } text = agot_dash_policy_lvl_aggressive fontsize = 10 default_format = "#warning" align = left }
+text_single = { layoutpolicy_horizontal = expanding text = agot_bank_dashboard_policy_row_approval_aggressive fontsize = 10 default_format = "#weak" align = left }
+}
+
+divider_light = { layoutpolicy_horizontal = expanding size = { 0 1 } }
+
+# --- DIVIDENDS ---
+hbox = {
+layoutpolicy_horizontal = expanding
+layoutpolicy_vertical = preferred
+spacing = 8
+margin = { 4 4 4 4 }
+background = "gfx/interface/window_background_2"
+text_single = { size = { 150 0 } text = agot_dash_policy_cat_dividends fontsize = 10 default_format = "#medium" align = left }
+text_single = { size = { 100 0 } text = agot_dash_policy_lvl_high fontsize = 10 default_format = "#accent" align = left }
+text_single = { layoutpolicy_horizontal = expanding text = agot_bank_dashboard_policy_row_dividend_high fontsize = 10 default_format = "#weak" align = left }
+}
+hbox = {
+layoutpolicy_horizontal = expanding
+layoutpolicy_vertical = preferred
+spacing = 8
+margin = { 4 4 4 4 }
+text_single = { size = { 150 0 } text = "" fontsize = 10 align = left }
+text_single = { size = { 100 0 } text = agot_dash_policy_lvl_balanced fontsize = 10 default_format = "#good" align = left }
+text_single = { layoutpolicy_horizontal = expanding text = agot_bank_dashboard_policy_row_dividend_balanced fontsize = 10 default_format = "#weak" align = left }
+}
+hbox = {
+layoutpolicy_horizontal = expanding
+layoutpolicy_vertical = preferred
+spacing = 8
+margin = { 4 4 4 4 }
+background = "gfx/interface/window_background_2"
+text_single = { size = { 150 0 } text = "" fontsize = 10 align = left }
+text_single = { size = { 100 0 } text = agot_dash_policy_lvl_reinvest fontsize = 10 default_format = "#warning" align = left }
+text_single = { layoutpolicy_horizontal = expanding text = agot_bank_dashboard_policy_row_dividend_reinvest fontsize = 10 default_format = "#weak" align = left }
+}
+}
+}
+}
+}
+}

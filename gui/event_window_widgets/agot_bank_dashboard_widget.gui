@@ -1,0 +1,157 @@
+widget = {
+	allow_outside = yes
+	name = "agot_bank_dashboard_widget"
+	size = { 440 300 }
+
+	vbox = {
+		layoutpolicy_horizontal = expanding
+		layoutpolicy_vertical = expanding
+		spacing = 6
+
+		text_single = {
+			text = agot_bank_dashboard_widget_bank_title
+			default_format = "#high"
+			fontsize = 22
+			fontsize_min = 14
+			align = center
+		}
+
+		text_single = {
+			text = agot_bank_dashboard_widget_kpi_line
+			default_format = "#medium"
+			align = left
+		}
+
+		text_single = {
+			text = agot_bank_dashboard_widget_kpi_line_2
+			default_format = "#medium"
+			align = left
+		}
+
+		divider_light = {
+			layoutpolicy_horizontal = expanding
+			size = { 0 2 }
+		}
+
+		hbox = {
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = preferred
+			spacing = 8
+
+			text_single = {
+				size = { 420 0 }
+				text = agot_bank_dashboard_widget_cards_header
+				default_format = "#bold"
+				align = left
+			}
+
+			text_single = {
+				size = { 220 0 }
+				text = agot_bank_dashboard_widget_manager_header
+				default_format = "#bold"
+				align = left
+			}
+
+			text_single = {
+				size = { 240 0 }
+				text = agot_bank_dashboard_widget_incoming_header
+				default_format = "#bold"
+				align = left
+			}
+		}
+
+		divider_light = {
+			layoutpolicy_horizontal = expanding
+			size = { 0 1 }
+		}
+
+		scrollbox = {
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+
+			blockoverride "scrollbox_content" {
+				vbox = {
+					layoutpolicy_horizontal = expanding
+					spacing = 4
+
+					hbox = {
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = preferred
+						spacing = 8
+
+						text_single = {
+							size = { 420 0 }
+							text = "agot_bank_dashboard_debtor_line_1"
+							default_format = "#medium"
+							align = left
+						}
+
+						text_single = {
+							size = { 220 0 }
+							text = agot_bank_dashboard_widget_manager_summary
+							default_format = "#medium"
+							align = left
+						}
+
+						text_single = {
+							size = { 240 0 }
+							text = "agot_bank_dashboard_incoming_line_1"
+							default_format = "#medium"
+							align = left
+						}
+					}
+
+					hbox = {
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = preferred
+						spacing = 8
+
+						text_single = {
+							size = { 420 0 }
+							text = "agot_bank_dashboard_debtor_line_2"
+							default_format = "#weak"
+							align = left
+						}
+
+						text_single = {
+							size = { 220 0 }
+							text = "agot_bank_dashboard_manager_stats"
+							default_format = "#weak"
+							align = left
+						}
+
+						text_single = {
+							size = { 240 0 }
+							text = "agot_bank_dashboard_incoming_line_2"
+							default_format = "#weak"
+							align = left
+						}
+					}
+
+					divider_light = {
+						layoutpolicy_horizontal = expanding
+						size = { 0 1 }
+					}
+
+					text_single = {
+						text = agot_bank_dashboard_widget_graph_header
+						default_format = "#bold"
+						align = left
+					}
+
+					text_single = {
+						text = agot_bank_dashboard_widget_graph_values_a
+						default_format = "#weak"
+						align = left
+					}
+
+					text_single = {
+						text = agot_bank_dashboard_widget_graph_values_b
+						default_format = "#weak"
+						align = left
+					}
+				}
+			}
+		}
+	}
+}

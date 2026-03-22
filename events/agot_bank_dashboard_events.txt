@@ -1,0 +1,446 @@
+﻿namespace = agot_bank_dashboard
+
+agot_bank_dashboard.0001 = {
+	type = character_event
+	title = agot_bank_dashboard.0001.t
+	desc = agot_bank_dashboard.0001.desc
+	theme = stewardship
+	is_triggered_only = yes
+
+    left_portrait = {
+        character = root
+        animation = personality_rational
+    }
+
+    option = {
+        name = agot_bank_dashboard.0001.a
+        trigger = {
+            OR = {
+                has_character_flag = IB_Director
+                AND = {
+                    has_variable = IB_Shares
+                    var:IB_Shares > 0
+                }
+            }
+            global_var:IB_BankValue > 0
+        }
+        agot_bank_dashboard_select_ib_effect = yes
+        trigger_event = {
+            id = agot_bank_dashboard.0010
+        }
+    }
+
+    option = {
+        name = agot_bank_dashboard.0001.b
+        trigger = {
+            OR = {
+                has_character_flag = bank1_Director
+                AND = {
+                    has_variable = bank1_Shares
+                    var:bank1_Shares > 0
+                }
+            }
+            global_var:bank1_BankValue > 0
+        }
+        agot_bank_dashboard_select_bank1_effect = yes
+        trigger_event = {
+            id = agot_bank_dashboard.0010
+        }
+    }
+
+    option = {
+        name = agot_bank_dashboard.0001.c
+        trigger = {
+            OR = {
+                has_character_flag = bank2_Director
+                AND = {
+                    has_variable = bank2_Shares
+                    var:bank2_Shares > 0
+                }
+            }
+            global_var:bank2_BankValue > 0
+        }
+        agot_bank_dashboard_select_bank2_effect = yes
+        trigger_event = {
+            id = agot_bank_dashboard.0010
+        }
+    }
+
+    option = {
+        name = agot_bank_dashboard.0001.d
+        trigger = {
+            OR = {
+                has_character_flag = bank3_Director
+                AND = {
+                    has_variable = bank3_Shares
+                    var:bank3_Shares > 0
+                }
+            }
+            global_var:bank3_BankValue > 0
+        }
+        agot_bank_dashboard_select_bank3_effect = yes
+        trigger_event = {
+            id = agot_bank_dashboard.0010
+        }
+    }
+
+    option = {
+        name = agot_bank_dashboard.0001.e
+    }
+}
+
+agot_bank_dashboard.0010 = {
+    type = character_event
+    title = agot_bank_dashboard.0010.t
+    desc = agot_bank_dashboard.0010.desc
+    theme = stewardship
+    is_triggered_only = yes
+
+    widget = {
+        is_shown = {
+            is_ai = no
+        }
+        gui = "agot_bank_dashboard_new"
+        container = "custom_widgets_container"
+    }
+
+    immediate = {
+        agot_bank_dashboard_prepare_projection_effect = yes
+        agot_bank_dashboard_prepare_widget_data_effect = yes
+    }
+
+    option = {
+        name = agot_bank_dashboard.0010.a
+        trigger = { var:agot_dash_bank_id = 1 }
+        custom_tooltip = agot_bank_dashboard_summary_ib_tt
+    }
+
+    option = {
+        name = agot_bank_dashboard.0010.a
+        trigger = { var:agot_dash_bank_id = 2 }
+        custom_tooltip = agot_bank_dashboard_summary_bank1_tt
+    }
+
+    option = {
+        name = agot_bank_dashboard.0010.a
+        trigger = { var:agot_dash_bank_id = 3 }
+        custom_tooltip = agot_bank_dashboard_summary_bank2_tt
+    }
+
+    option = {
+        name = agot_bank_dashboard.0010.a
+        trigger = { var:agot_dash_bank_id = 4 }
+        custom_tooltip = agot_bank_dashboard_summary_bank3_tt
+    }
+
+    option = {
+        name = agot_bank_dashboard.0010.b
+        trigger_event = {
+            id = agot_bank_dashboard.0020
+        }
+    }
+
+    option = {
+        name = agot_bank_dashboard.0010.c
+        trigger = {
+            OR = {
+                AND = {
+                    var:agot_dash_bank_id = 1
+                    has_character_flag = IB_Director
+                }
+                AND = {
+                    var:agot_dash_bank_id = 2
+                    has_character_flag = bank1_Director
+                }
+                AND = {
+                    var:agot_dash_bank_id = 3
+                    has_character_flag = bank2_Director
+                }
+                AND = {
+                    var:agot_dash_bank_id = 4
+                    has_character_flag = bank3_Director
+                }
+            }
+        }
+        trigger_event = {
+            id = agot_bank_dashboard.0030
+        }
+    }
+
+    option = {
+        name = agot_bank_dashboard.0010.e
+        agot_bank_dashboard_cleanup_widget_data_effect = yes
+        trigger_event = {
+            id = agot_bank_dashboard.0001
+        }
+    }
+
+    option = {
+        name = agot_bank_dashboard.0010.f
+        agot_bank_dashboard_cleanup_widget_data_effect = yes
+    }
+}
+
+agot_bank_dashboard.0020 = {
+    type = character_event
+    title = agot_bank_dashboard.0020.t
+    desc = agot_bank_dashboard.0020.desc
+    theme = stewardship
+    is_triggered_only = yes
+
+    widget = {
+        is_shown = { is_ai = no }
+        gui = "agot_bank_policy_insights_new"
+        container = "custom_widgets_container"
+    }
+
+    immediate = {
+        agot_bank_dashboard_prepare_projection_effect = yes
+    }
+
+    option = {
+        name = agot_bank_dashboard.0020.a
+        trigger = {
+            OR = {
+                AND = { var:agot_dash_bank_id = 1  has_character_flag = IB_Director }
+                AND = { var:agot_dash_bank_id = 2  has_character_flag = bank1_Director }
+                AND = { var:agot_dash_bank_id = 3  has_character_flag = bank2_Director }
+                AND = { var:agot_dash_bank_id = 4  has_character_flag = bank3_Director }
+            }
+        }
+        agot_bank_dashboard_apply_interest_low_effect = yes
+        custom_tooltip = agot_bank_dashboard_interest_low_tt
+        trigger_event = { id = agot_bank_dashboard.0010 }
+    }
+
+    option = {
+        name = agot_bank_dashboard.0020.b
+        trigger = {
+            OR = {
+                AND = { var:agot_dash_bank_id = 1  has_character_flag = IB_Director }
+                AND = { var:agot_dash_bank_id = 2  has_character_flag = bank1_Director }
+                AND = { var:agot_dash_bank_id = 3  has_character_flag = bank2_Director }
+                AND = { var:agot_dash_bank_id = 4  has_character_flag = bank3_Director }
+            }
+        }
+        agot_bank_dashboard_apply_interest_mid_effect = yes
+        custom_tooltip = agot_bank_dashboard_interest_mid_tt
+        trigger_event = { id = agot_bank_dashboard.0010 }
+    }
+
+    option = {
+        name = agot_bank_dashboard.0020.c
+        trigger = {
+            OR = {
+                AND = { var:agot_dash_bank_id = 1  has_character_flag = IB_Director }
+                AND = { var:agot_dash_bank_id = 2  has_character_flag = bank1_Director }
+                AND = { var:agot_dash_bank_id = 3  has_character_flag = bank2_Director }
+                AND = { var:agot_dash_bank_id = 4  has_character_flag = bank3_Director }
+            }
+        }
+        agot_bank_dashboard_apply_interest_high_effect = yes
+        custom_tooltip = agot_bank_dashboard_interest_high_tt
+        trigger_event = { id = agot_bank_dashboard.0010 }
+    }
+
+    option = {
+        name = agot_bank_dashboard.0020.d
+        trigger = {
+            OR = {
+                AND = { var:agot_dash_bank_id = 1  has_character_flag = IB_Director }
+                AND = { var:agot_dash_bank_id = 2  has_character_flag = bank1_Director }
+                AND = { var:agot_dash_bank_id = 3  has_character_flag = bank2_Director }
+                AND = { var:agot_dash_bank_id = 4  has_character_flag = bank3_Director }
+            }
+        }
+        agot_bank_dashboard_apply_loans_restrict_effect = yes
+        trigger_event = { id = agot_bank_dashboard.0010 }
+    }
+
+    option = {
+        name = agot_bank_dashboard.0020.e
+        trigger = {
+            OR = {
+                AND = { var:agot_dash_bank_id = 1  has_character_flag = IB_Director }
+                AND = { var:agot_dash_bank_id = 2  has_character_flag = bank1_Director }
+                AND = { var:agot_dash_bank_id = 3  has_character_flag = bank2_Director }
+                AND = { var:agot_dash_bank_id = 4  has_character_flag = bank3_Director }
+            }
+        }
+        agot_bank_dashboard_apply_loans_balanced_effect = yes
+        trigger_event = { id = agot_bank_dashboard.0010 }
+    }
+
+    option = {
+        name = agot_bank_dashboard.0020.f
+        trigger = {
+            OR = {
+                AND = { var:agot_dash_bank_id = 1  has_character_flag = IB_Director }
+                AND = { var:agot_dash_bank_id = 2  has_character_flag = bank1_Director }
+                AND = { var:agot_dash_bank_id = 3  has_character_flag = bank2_Director }
+                AND = { var:agot_dash_bank_id = 4  has_character_flag = bank3_Director }
+            }
+        }
+        agot_bank_dashboard_apply_loans_aggressive_effect = yes
+        trigger_event = { id = agot_bank_dashboard.0010 }
+    }
+
+    option = {
+        name = agot_bank_dashboard.0020.g
+        trigger = {
+            OR = {
+                AND = { var:agot_dash_bank_id = 1  has_character_flag = IB_Director }
+                AND = { var:agot_dash_bank_id = 2  has_character_flag = bank1_Director }
+                AND = { var:agot_dash_bank_id = 3  has_character_flag = bank2_Director }
+                AND = { var:agot_dash_bank_id = 4  has_character_flag = bank3_Director }
+            }
+        }
+        agot_bank_dashboard_apply_dividend_high_effect = yes
+        trigger_event = { id = agot_bank_dashboard.0010 }
+    }
+
+    option = {
+        name = agot_bank_dashboard.0020.h
+        trigger = {
+            OR = {
+                AND = { var:agot_dash_bank_id = 1  has_character_flag = IB_Director }
+                AND = { var:agot_dash_bank_id = 2  has_character_flag = bank1_Director }
+                AND = { var:agot_dash_bank_id = 3  has_character_flag = bank2_Director }
+                AND = { var:agot_dash_bank_id = 4  has_character_flag = bank3_Director }
+            }
+        }
+        agot_bank_dashboard_apply_dividend_balanced_effect = yes
+        trigger_event = { id = agot_bank_dashboard.0010 }
+    }
+
+    option = {
+        name = agot_bank_dashboard.0020.i
+        trigger = {
+            OR = {
+                AND = { var:agot_dash_bank_id = 1  has_character_flag = IB_Director }
+                AND = { var:agot_dash_bank_id = 2  has_character_flag = bank1_Director }
+                AND = { var:agot_dash_bank_id = 3  has_character_flag = bank2_Director }
+                AND = { var:agot_dash_bank_id = 4  has_character_flag = bank3_Director }
+            }
+        }
+        agot_bank_dashboard_apply_dividend_reinvest_effect = yes
+        trigger_event = { id = agot_bank_dashboard.0010 }
+    }
+
+    option = {
+        name = agot_bank_dashboard.0020.j
+        trigger_event = { id = agot_bank_dashboard.0010 }
+    }
+
+    option = {
+        name = agot_bank_dashboard.0020.k
+        agot_bank_dashboard_cleanup_widget_data_effect = yes
+    }
+}
+
+agot_bank_dashboard.0030 = {
+    type = character_event
+    title = agot_bank_dashboard.0030.t
+    desc = agot_bank_dashboard.0030.desc
+    theme = stewardship
+    is_triggered_only = yes
+
+    left_portrait = {
+        character = root
+        animation = steward
+    }
+
+    option = {
+        name = agot_bank_dashboard.0030.a
+        trigger = {
+            OR = {
+                AND = {
+                    var:agot_dash_bank_id = 1
+                    has_character_flag = IB_Director
+                }
+                AND = {
+                    var:agot_dash_bank_id = 2
+                    has_character_flag = bank1_Director
+                }
+                AND = {
+                    var:agot_dash_bank_id = 3
+                    has_character_flag = bank2_Director
+                }
+                AND = {
+                    var:agot_dash_bank_id = 4
+                    has_character_flag = bank3_Director
+                }
+            }
+        }
+        agot_bank_dashboard_apply_safe_policy_effect = yes
+        custom_tooltip = agot_bank_dashboard_policy_safe_tt
+        trigger_event = {
+            id = agot_bank_dashboard.0010
+        }
+    }
+
+    option = {
+        name = agot_bank_dashboard.0030.b
+        trigger = {
+            OR = {
+                AND = {
+                    var:agot_dash_bank_id = 1
+                    has_character_flag = IB_Director
+                }
+                AND = {
+                    var:agot_dash_bank_id = 2
+                    has_character_flag = bank1_Director
+                }
+                AND = {
+                    var:agot_dash_bank_id = 3
+                    has_character_flag = bank2_Director
+                }
+                AND = {
+                    var:agot_dash_bank_id = 4
+                    has_character_flag = bank3_Director
+                }
+            }
+        }
+        agot_bank_dashboard_apply_growth_policy_effect = yes
+        custom_tooltip = agot_bank_dashboard_policy_growth_tt
+        trigger_event = {
+            id = agot_bank_dashboard.0010
+        }
+    }
+
+    option = {
+        name = agot_bank_dashboard.0030.c
+        trigger = {
+            OR = {
+                AND = {
+                    var:agot_dash_bank_id = 1
+                    has_character_flag = IB_Director
+                }
+                AND = {
+                    var:agot_dash_bank_id = 2
+                    has_character_flag = bank1_Director
+                }
+                AND = {
+                    var:agot_dash_bank_id = 3
+                    has_character_flag = bank2_Director
+                }
+                AND = {
+                    var:agot_dash_bank_id = 4
+                    has_character_flag = bank3_Director
+                }
+            }
+        }
+        agot_bank_dashboard_apply_aggressive_policy_effect = yes
+        custom_tooltip = agot_bank_dashboard_policy_aggressive_tt
+        trigger_event = {
+            id = agot_bank_dashboard.0010
+        }
+    }
+
+    option = {
+        name = agot_bank_dashboard.0030.d
+        trigger_event = {
+            id = agot_bank_dashboard.0010
+        }
+    }
+}

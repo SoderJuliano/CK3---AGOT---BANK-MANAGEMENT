@@ -1,0 +1,191 @@
+﻿widget = {
+	allow_outside = yes
+	name = "agot_bank_dashboard_new"
+	size = { 860 410 }
+
+	vbox = {
+		layoutpolicy_horizontal = expanding
+		layoutpolicy_vertical = expanding
+		spacing = 6
+		margin = { 10 6 10 6 }
+		background = "gfx/interface/window_background_2"
+
+		# ===== HEADER =====
+		hbox = {
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = preferred
+			spacing = 8
+			icon = { size = { 30 30 } texture = "gfx/interface/icons/icon_wealth.dds" }
+			vbox = {
+				layoutpolicy_horizontal = expanding
+				spacing = 1
+				text_single = { text = agot_dash_welcome_headline fontsize = 18 fontsize_min = 13 default_format = "#P" align = left }
+				text_single = { text = agot_dash_deposit_button fontsize = 10 default_format = "#weak" align = left }
+			}
+			expand = {}
+			vbox = {
+				layoutpolicy_horizontal = preferred
+				spacing = 2
+				text_single = { text = agot_dash_user_greeting fontsize = 13 fontsize_min = 10 default_format = "#bold" align = right }
+				text_single = { text = agot_dash_user_id fontsize = 10 fontsize_min = 8 default_format = "#weak" align = right }
+				text_single = { text = agot_dash_profile_complete fontsize = 10 fontsize_min = 8 default_format = "#good" align = right }
+			}
+			widget = {
+				datacontext = "[GetPlayer]"
+				size = { 60 60 }
+				portrait_head_small = { scale = 0.7 tooltip_visible = no }
+			}
+		}
+		divider_light = { layoutpolicy_horizontal = expanding size = { 0 1 } }
+
+		hbox = {
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			spacing = 8
+
+			vbox = {
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				spacing = 5
+				# KPI ROW 1
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = preferred
+					spacing = 5
+				vbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = preferred
+					background = "gfx/interface/window_background_2"
+					margin = { 10 8 10 10 }
+					spacing = 3
+					text_single = { text = agot_dash_kpi_share_label fontsize = 9 default_format = "#accent" align = left }
+					text_single = { text = agot_dash_kpi_share_sub fontsize = 10 default_format = "#weak" align = left }
+					text_single = { text = agot_dash_kpi_share_value fontsize = 22 fontsize_min = 14 default_format = "#P" align = left }
+				}
+				vbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = preferred
+					background = "gfx/interface/window_background_2"
+					margin = { 10 8 10 10 }
+					spacing = 3
+					text_single = { text = agot_dash_kpi_investment_label fontsize = 9 default_format = "#accent" align = left }
+					text_single = { text = agot_dash_kpi_investment_sub fontsize = 10 default_format = "#weak" align = left }
+					text_single = { text = agot_dash_kpi_investment_value fontsize = 22 fontsize_min = 14 default_format = "#P" align = left }
+				}
+				vbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = preferred
+					background = "gfx/interface/window_background_2"
+					margin = { 10 8 10 10 }
+					spacing = 3
+					text_single = { text = agot_dash_kpi_due_label fontsize = 9 default_format = "#accent" align = left }
+					text_single = { text = agot_dash_kpi_due_sub fontsize = 10 default_format = "#weak" align = left }
+					text_single = { text = agot_dash_kpi_due_value fontsize = 22 fontsize_min = 14 default_format = "#bad" align = left }
+				}
+				}
+				# KPI ROW 2
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = preferred
+					spacing = 5
+				vbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = preferred
+					background = "gfx/interface/window_background_2"
+					margin = { 10 8 10 10 }
+					spacing = 3
+					text_single = { text = agot_dash_kpi_profit_label fontsize = 9 default_format = "#accent" align = left }
+					text_single = { text = agot_dash_kpi_profit_sub fontsize = 10 default_format = "#weak" align = left }
+					text_single = { text = agot_dash_kpi_profit_value fontsize = 22 fontsize_min = 14 default_format = "#good" align = left }
+				}
+				vbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = preferred
+					background = "gfx/interface/window_background_2"
+					margin = { 10 8 10 10 }
+					spacing = 3
+					text_single = { text = agot_dash_kpi_withdrawal_label fontsize = 9 default_format = "#accent" align = left }
+					text_single = { text = agot_dash_kpi_withdrawal_sub fontsize = 10 default_format = "#weak" align = left }
+					text_single = { text = agot_dash_kpi_withdrawal_value fontsize = 22 fontsize_min = 14 default_format = "#bad" align = left }
+				}
+				vbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = preferred
+					background = "gfx/interface/window_background_2"
+					margin = { 10 8 10 10 }
+					spacing = 3
+					text_single = { text = agot_dash_kpi_loan_label fontsize = 9 default_format = "#accent" align = left }
+					text_single = { text = agot_dash_kpi_loan_sub fontsize = 10 default_format = "#weak" align = left }
+					text_single = { text = agot_dash_kpi_loan_value fontsize = 22 fontsize_min = 14 default_format = "#high" align = left }
+				}
+				}
+				vbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					background = "gfx/interface/window_background_2"
+					margin = { 10 8 10 8 }
+					spacing = 4
+					hbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 6
+						text_single = { layoutpolicy_horizontal = expanding text = agot_dash_savings_title fontsize = 13 fontsize_min = 10 default_format = "#bold" align = left }
+						text_single = { text = agot_dash_total_savings_amount fontsize = 12 default_format = "#P" align = right }
+					}
+					text_single = { text = agot_dash_see_all_savings fontsize = 9 default_format = "#weak" align = left }
+					divider_light = { layoutpolicy_horizontal = expanding size = { 0 1 } }
+					text_single = { layoutpolicy_horizontal = expanding text = agot_dash_chart_row1 fontsize = 11 fontsize_min = 9 default_format = "#medium" align = left multiline = yes }
+					text_single = { layoutpolicy_horizontal = expanding text = agot_dash_chart_row2 fontsize = 11 fontsize_min = 9 default_format = "#medium" align = left multiline = yes }
+				}
+			}
+			divider_light = { size = { 2 0 } layoutpolicy_vertical = expanding }
+			vbox = {
+				layoutpolicy_horizontal = preferred
+				layoutpolicy_vertical = expanding
+				size = { 210 0 }
+				spacing = 6
+				vbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = preferred
+					background = "gfx/interface/window_background_2"
+					margin = { 10 8 10 10 }
+					spacing = 4
+					text_single = { text = agot_dash_member_since_label fontsize = 12 default_format = "#bold" align = left }
+					divider_light = { layoutpolicy_horizontal = expanding size = { 0 1 } }
+					text_single = { text = agot_dash_member_bank_name fontsize = 13 fontsize_min = 10 default_format = "#P" align = left }
+					text_single = { text = agot_dash_member_role fontsize = 11 default_format = "#medium" align = left }
+					text_single = { text = agot_dash_member_shares_total fontsize = 10 default_format = "#medium" align = left }
+				}
+				vbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					background = "gfx/interface/window_background_2"
+					margin = { 10 8 10 6 }
+					spacing = 4
+					text_single = { text = agot_dash_upcoming_payments_title fontsize = 12 default_format = "#bold" align = left }
+					divider_light = { layoutpolicy_horizontal = expanding size = { 0 1 } }
+					scrollbox = {
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						blockoverride "scrollbox_content" {
+							vbox = {
+								datamodel = "[GetPlayer.MakeScope.GetList('agot_dash_incoming_list')]"
+								layoutpolicy_horizontal = expanding
+								spacing = 4
+								item = {
+									hbox = {
+										datacontext = "[Scope.GetCharacter]"
+										layoutpolicy_horizontal = expanding
+										spacing = 4
+										margin = { 0 1 0 1 }
+										icon = { size = { 14 14 } texture = "gfx/interface/icons/icon_gold.dds" }
+										text_single = { layoutpolicy_horizontal = expanding text = agot_dash_incoming_row fontsize = 11 fontsize_min = 9 default_format = "#medium" align = left }
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

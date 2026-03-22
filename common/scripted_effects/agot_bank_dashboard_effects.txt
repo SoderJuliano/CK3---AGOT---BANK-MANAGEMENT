@@ -1,0 +1,676 @@
+﻿agot_bank_dashboard_reset_view_effect = {
+    clear_variable_list = agot_dash_debtors_list
+    clear_variable_list = agot_dash_incoming_list
+    clear_variable_list = agot_dash_manager_list
+
+    remove_variable = agot_dash_last_snapshot_year
+    remove_variable = agot_dash_last_snapshot_month
+
+    remove_variable = agot_dash_bank_id
+    remove_variable = agot_dash_bank_cash
+    remove_variable = agot_dash_bank_loaned
+    remove_variable = agot_dash_bank_value
+    remove_variable = agot_dash_bank_earnings
+    remove_variable = agot_dash_bank_expenses
+    remove_variable = agot_dash_bank_lost_loans
+    remove_variable = agot_dash_bank_loans
+    remove_variable = agot_dash_bank_defaults
+    remove_variable = agot_dash_bank_interest
+    remove_variable = agot_dash_bank_risk
+    remove_variable = agot_dash_bank_dividend
+    remove_variable = agot_dash_bank_shares_total
+    remove_variable = agot_dash_bank_value_per_share
+    remove_variable = agot_dash_player_shares
+
+    remove_variable = agot_dash_history_01
+    remove_variable = agot_dash_history_02
+    remove_variable = agot_dash_history_03
+    remove_variable = agot_dash_history_04
+    remove_variable = agot_dash_history_05
+    remove_variable = agot_dash_history_06
+    remove_variable = agot_dash_history_07
+    remove_variable = agot_dash_history_08
+    remove_variable = agot_dash_history_09
+    remove_variable = agot_dash_history_10
+    remove_variable = agot_dash_history_11
+    remove_variable = agot_dash_history_12
+
+    remove_variable = agot_dash_project_min
+    remove_variable = agot_dash_project_max
+}
+
+agot_bank_dashboard_select_ib_effect = {
+    agot_bank_dashboard_reset_view_effect = yes
+    set_variable = { name = agot_dash_bank_id value = 1 }
+    set_variable = { name = agot_dash_bank_cash value = global_var:IB_FreeCapital }
+    set_variable = { name = agot_dash_bank_loaned value = global_var:IB_LoanedCapital }
+    set_variable = { name = agot_dash_bank_value value = global_var:IB_BankValue }
+    set_variable = { name = agot_dash_bank_earnings value = global_var:IB_Earnings }
+    set_variable = { name = agot_dash_bank_expenses value = global_var:IB_Expenses }
+    set_variable = { name = agot_dash_bank_lost_loans value = global_var:IB_LostLoans }
+    set_variable = { name = agot_dash_bank_loans value = global_var:IB_NofLoans }
+    set_variable = { name = agot_dash_bank_defaults value = global_var:IB_NofDefaults }
+    set_variable = { name = agot_dash_bank_interest value = global_var:IB_InterestLevel }
+    set_variable = { name = agot_dash_bank_risk value = global_var:IB_RiskLevel }
+    set_variable = { name = agot_dash_bank_dividend value = global_var:IB_DividendLevel }
+    set_variable = { name = agot_dash_bank_shares_total value = global_var:IB_NofShares }
+    set_variable = { name = agot_dash_bank_value_per_share value = global_var:IB_ValuePerShare }
+    if = {
+        limit = { has_variable = IB_Shares }
+        set_variable = { name = agot_dash_player_shares value = var:IB_Shares }
+    }
+    else = {
+        set_variable = { name = agot_dash_player_shares value = 0 }
+    }
+}
+
+agot_bank_dashboard_select_bank1_effect = {
+    agot_bank_dashboard_reset_view_effect = yes
+    set_variable = { name = agot_dash_bank_id value = 2 }
+    set_variable = { name = agot_dash_bank_cash value = global_var:bank1_FreeCapital }
+    set_variable = { name = agot_dash_bank_loaned value = global_var:bank1_LoanedCapital }
+    set_variable = { name = agot_dash_bank_value value = global_var:bank1_BankValue }
+    set_variable = { name = agot_dash_bank_earnings value = global_var:bank1_Earnings }
+    set_variable = { name = agot_dash_bank_expenses value = global_var:bank1_Expenses }
+    set_variable = { name = agot_dash_bank_lost_loans value = global_var:bank1_LostLoans }
+    set_variable = { name = agot_dash_bank_loans value = global_var:bank1_NofLoans }
+    set_variable = { name = agot_dash_bank_defaults value = global_var:bank1_NofDefaults }
+    set_variable = { name = agot_dash_bank_interest value = global_var:bank1_InterestLevel }
+    set_variable = { name = agot_dash_bank_risk value = global_var:bank1_RiskLevel }
+    set_variable = { name = agot_dash_bank_dividend value = global_var:bank1_DividendLevel }
+    set_variable = { name = agot_dash_bank_shares_total value = global_var:bank1_NofShares }
+    set_variable = { name = agot_dash_bank_value_per_share value = global_var:bank1_ValuePerShare }
+    if = {
+        limit = { has_variable = bank1_Shares }
+        set_variable = { name = agot_dash_player_shares value = var:bank1_Shares }
+    }
+    else = {
+        set_variable = { name = agot_dash_player_shares value = 0 }
+    }
+}
+
+agot_bank_dashboard_select_bank2_effect = {
+    agot_bank_dashboard_reset_view_effect = yes
+    set_variable = { name = agot_dash_bank_id value = 3 }
+    set_variable = { name = agot_dash_bank_cash value = global_var:bank2_FreeCapital }
+    set_variable = { name = agot_dash_bank_loaned value = global_var:bank2_LoanedCapital }
+    set_variable = { name = agot_dash_bank_value value = global_var:bank2_BankValue }
+    set_variable = { name = agot_dash_bank_earnings value = global_var:bank2_Earnings }
+    set_variable = { name = agot_dash_bank_expenses value = global_var:bank2_Expenses }
+    set_variable = { name = agot_dash_bank_lost_loans value = global_var:bank2_LostLoans }
+    set_variable = { name = agot_dash_bank_loans value = global_var:bank2_NofLoans }
+    set_variable = { name = agot_dash_bank_defaults value = global_var:bank2_NofDefaults }
+    set_variable = { name = agot_dash_bank_interest value = global_var:bank2_InterestLevel }
+    set_variable = { name = agot_dash_bank_risk value = global_var:bank2_RiskLevel }
+    set_variable = { name = agot_dash_bank_dividend value = global_var:bank2_DividendLevel }
+    set_variable = { name = agot_dash_bank_shares_total value = global_var:bank2_NofShares }
+    set_variable = { name = agot_dash_bank_value_per_share value = global_var:bank2_ValuePerShare }
+    if = {
+        limit = { has_variable = bank2_Shares }
+        set_variable = { name = agot_dash_player_shares value = var:bank2_Shares }
+    }
+    else = {
+        set_variable = { name = agot_dash_player_shares value = 0 }
+    }
+}
+
+agot_bank_dashboard_select_bank3_effect = {
+    agot_bank_dashboard_reset_view_effect = yes
+    set_variable = { name = agot_dash_bank_id value = 4 }
+    set_variable = { name = agot_dash_bank_cash value = global_var:bank3_FreeCapital }
+    set_variable = { name = agot_dash_bank_loaned value = global_var:bank3_LoanedCapital }
+    set_variable = { name = agot_dash_bank_value value = global_var:bank3_BankValue }
+    set_variable = { name = agot_dash_bank_earnings value = global_var:bank3_Earnings }
+    set_variable = { name = agot_dash_bank_expenses value = global_var:bank3_Expenses }
+    set_variable = { name = agot_dash_bank_lost_loans value = global_var:bank3_LostLoans }
+    set_variable = { name = agot_dash_bank_loans value = global_var:bank3_NofLoans }
+    set_variable = { name = agot_dash_bank_defaults value = global_var:bank3_NofDefaults }
+    set_variable = { name = agot_dash_bank_interest value = global_var:bank3_InterestLevel }
+    set_variable = { name = agot_dash_bank_risk value = global_var:bank3_RiskLevel }
+    set_variable = { name = agot_dash_bank_dividend value = global_var:bank3_DividendLevel }
+    set_variable = { name = agot_dash_bank_shares_total value = global_var:bank3_NofShares }
+    set_variable = { name = agot_dash_bank_value_per_share value = global_var:bank3_ValuePerShare }
+    if = {
+        limit = { has_variable = bank3_Shares }
+        set_variable = { name = agot_dash_player_shares value = var:bank3_Shares }
+    }
+    else = {
+        set_variable = { name = agot_dash_player_shares value = 0 }
+    }
+}
+
+agot_bank_dashboard_prepare_projection_effect = {
+    set_variable = { name = agot_dash_project_min value = -2 }
+    set_variable = { name = agot_dash_project_max value = 4 }
+
+    if = {
+        limit = { is_at_war = yes }
+        change_variable = { name = agot_dash_project_max add = 3 }
+        change_variable = { name = agot_dash_project_min add = -1 }
+    }
+
+    if = {
+        limit = { stewardship >= 15 }
+        change_variable = { name = agot_dash_project_min add = 1 }
+        change_variable = { name = agot_dash_project_max add = 2 }
+    }
+    else_if = {
+        limit = { stewardship <= 6 }
+        change_variable = { name = agot_dash_project_min add = -2 }
+    }
+
+    if = {
+        limit = { diplomacy >= 14 }
+        change_variable = { name = agot_dash_project_max add = 1 }
+    }
+
+    if = {
+        limit = { var:agot_dash_bank_interest = -1 }
+        change_variable = { name = agot_dash_project_min add = 1 }
+        change_variable = { name = agot_dash_project_max add = 2 }
+    }
+    else_if = {
+        limit = { var:agot_dash_bank_interest = 1 }
+        change_variable = { name = agot_dash_project_min add = -2 }
+        change_variable = { name = agot_dash_project_max add = 3 }
+    }
+
+    if = {
+        limit = { var:agot_dash_bank_risk >= 12 }
+        change_variable = { name = agot_dash_project_min add = -2 }
+        change_variable = { name = agot_dash_project_max add = 2 }
+    }
+}
+
+agot_bank_dashboard_record_monthly_snapshot_effect = {
+    if = {
+        limit = {
+            OR = {
+                NOT = { exists = var:agot_dash_last_snapshot_year }
+                NOT = { exists = var:agot_dash_last_snapshot_month }
+                NOT = { var:agot_dash_last_snapshot_year = current_year }
+                NOT = { var:agot_dash_last_snapshot_month = current_month }
+            }
+        }
+
+        set_variable = { name = agot_dash_history_12 value = var:agot_dash_history_11 }
+        set_variable = { name = agot_dash_history_11 value = var:agot_dash_history_10 }
+        set_variable = { name = agot_dash_history_10 value = var:agot_dash_history_09 }
+        set_variable = { name = agot_dash_history_09 value = var:agot_dash_history_08 }
+        set_variable = { name = agot_dash_history_08 value = var:agot_dash_history_07 }
+        set_variable = { name = agot_dash_history_07 value = var:agot_dash_history_06 }
+        set_variable = { name = agot_dash_history_06 value = var:agot_dash_history_05 }
+        set_variable = { name = agot_dash_history_05 value = var:agot_dash_history_04 }
+        set_variable = { name = agot_dash_history_04 value = var:agot_dash_history_03 }
+        set_variable = { name = agot_dash_history_03 value = var:agot_dash_history_02 }
+        set_variable = { name = agot_dash_history_02 value = var:agot_dash_history_01 }
+
+        set_variable = {
+            name = agot_dash_temp_den
+            value = var:agot_dash_bank_cash
+        }
+        change_variable = {
+            name = agot_dash_temp_den
+            add = var:agot_dash_bank_loaned
+        }
+
+        if = {
+            limit = { var:agot_dash_temp_den > 0 }
+            set_variable = {
+                name = agot_dash_history_01
+                value = var:agot_dash_bank_cash
+            }
+            change_variable = {
+                name = agot_dash_history_01
+                multiply = 100
+            }
+            change_variable = {
+                name = agot_dash_history_01
+                divide = var:agot_dash_temp_den
+            }
+        }
+        else = {
+            set_variable = { name = agot_dash_history_01 value = 0 }
+        }
+
+        set_variable = { name = agot_dash_last_snapshot_year value = current_year }
+        set_variable = { name = agot_dash_last_snapshot_month value = current_month }
+
+        remove_variable = agot_dash_temp_den
+    }
+}
+
+agot_bank_dashboard_prepare_widget_data_effect = {
+    clear_variable_list = agot_dash_debtors_list
+    clear_variable_list = agot_dash_incoming_list
+    clear_variable_list = agot_dash_manager_list
+
+    agot_bank_dashboard_record_monthly_snapshot_effect = yes
+
+    if = {
+        limit = { var:agot_dash_bank_id = 1 }
+
+        ordered_in_global_list = {
+            variable = IB_Shareholder
+            limit = { has_character_flag = IB_Director }
+            max = 1
+
+            set_variable = { name = agot_dash_mgr_stew value = stewardship }
+            set_variable = { name = agot_dash_mgr_dip value = diplomacy }
+
+            root = {
+                add_to_variable_list = {
+                    name = agot_dash_manager_list
+                    target = prev
+                }
+            }
+        }
+
+        ordered_in_global_list = {
+            variable = IB_Important_Debtors
+            limit = { has_variable = total_repayment }
+            order_by = { value = var:total_repayment }
+            max = 20
+
+            set_variable = { name = agot_dash_gain_abs value = var:total_repayment }
+            change_variable = { name = agot_dash_gain_abs subtract = var:loaned_amount }
+            set_variable = { name = agot_dash_gain_pct value = var:agot_dash_gain_abs }
+            if = {
+                limit = { var:loaned_amount > 0 }
+                change_variable = { name = agot_dash_gain_pct multiply = 100 }
+                change_variable = { name = agot_dash_gain_pct divide = var:loaned_amount }
+            }
+            else = {
+                set_variable = { name = agot_dash_gain_pct value = 0 }
+            }
+            set_variable = { name = agot_dash_paid_amount value = 0 }
+
+            root = {
+                add_to_variable_list = {
+                    name = agot_dash_debtors_list
+                    target = prev
+                }
+            }
+        }
+
+        ordered_in_global_list = {
+            variable = IB_Important_Debtors
+            limit = { has_variable = total_repayment }
+            order_by = { value = var:total_repayment }
+            max = 6
+
+            if = {
+                limit = { has_variable = half_repayment }
+                set_variable = { name = agot_dash_next_payment value = var:half_repayment }
+            }
+            else = {
+                set_variable = { name = agot_dash_next_payment value = var:total_repayment }
+                change_variable = { name = agot_dash_next_payment divide = 2 }
+            }
+
+            root = {
+                add_to_variable_list = {
+                    name = agot_dash_incoming_list
+                    target = prev
+                }
+            }
+        }
+    }
+    else_if = {
+        limit = { var:agot_dash_bank_id = 2 }
+
+        ordered_in_global_list = {
+            variable = bank1_Shareholder
+            limit = { has_character_flag = bank1_Director }
+            max = 1
+
+            set_variable = { name = agot_dash_mgr_stew value = stewardship }
+            set_variable = { name = agot_dash_mgr_dip value = diplomacy }
+
+            root = {
+                add_to_variable_list = {
+                    name = agot_dash_manager_list
+                    target = prev
+                }
+            }
+        }
+
+        ordered_in_global_list = {
+            variable = bank1_Important_Debtors
+            limit = { has_variable = total_repayment }
+            order_by = { value = var:total_repayment }
+            max = 20
+
+            set_variable = { name = agot_dash_gain_abs value = var:total_repayment }
+            change_variable = { name = agot_dash_gain_abs subtract = var:loaned_amount }
+            set_variable = { name = agot_dash_gain_pct value = var:agot_dash_gain_abs }
+            if = {
+                limit = { var:loaned_amount > 0 }
+                change_variable = { name = agot_dash_gain_pct multiply = 100 }
+                change_variable = { name = agot_dash_gain_pct divide = var:loaned_amount }
+            }
+            else = {
+                set_variable = { name = agot_dash_gain_pct value = 0 }
+            }
+            set_variable = { name = agot_dash_paid_amount value = 0 }
+
+            root = {
+                add_to_variable_list = {
+                    name = agot_dash_debtors_list
+                    target = prev
+                }
+            }
+        }
+
+        ordered_in_global_list = {
+            variable = bank1_Important_Debtors
+            limit = { has_variable = total_repayment }
+            order_by = { value = var:total_repayment }
+            max = 6
+
+            if = {
+                limit = { has_variable = half_repayment }
+                set_variable = { name = agot_dash_next_payment value = var:half_repayment }
+            }
+            else = {
+                set_variable = { name = agot_dash_next_payment value = var:total_repayment }
+                change_variable = { name = agot_dash_next_payment divide = 2 }
+            }
+
+            root = {
+                add_to_variable_list = {
+                    name = agot_dash_incoming_list
+                    target = prev
+                }
+            }
+        }
+    }
+    else_if = {
+        limit = { var:agot_dash_bank_id = 3 }
+
+        ordered_in_global_list = {
+            variable = bank2_Shareholder
+            limit = { has_character_flag = bank2_Director }
+            max = 1
+
+            set_variable = { name = agot_dash_mgr_stew value = stewardship }
+            set_variable = { name = agot_dash_mgr_dip value = diplomacy }
+
+            root = {
+                add_to_variable_list = {
+                    name = agot_dash_manager_list
+                    target = prev
+                }
+            }
+        }
+
+        ordered_in_global_list = {
+            variable = bank2_Important_Debtors
+            limit = { has_variable = total_repayment }
+            order_by = { value = var:total_repayment }
+            max = 20
+
+            set_variable = { name = agot_dash_gain_abs value = var:total_repayment }
+            change_variable = { name = agot_dash_gain_abs subtract = var:loaned_amount }
+            set_variable = { name = agot_dash_gain_pct value = var:agot_dash_gain_abs }
+            if = {
+                limit = { var:loaned_amount > 0 }
+                change_variable = { name = agot_dash_gain_pct multiply = 100 }
+                change_variable = { name = agot_dash_gain_pct divide = var:loaned_amount }
+            }
+            else = {
+                set_variable = { name = agot_dash_gain_pct value = 0 }
+            }
+            set_variable = { name = agot_dash_paid_amount value = 0 }
+
+            root = {
+                add_to_variable_list = {
+                    name = agot_dash_debtors_list
+                    target = prev
+                }
+            }
+        }
+
+        ordered_in_global_list = {
+            variable = bank2_Important_Debtors
+            limit = { has_variable = total_repayment }
+            order_by = { value = var:total_repayment }
+            max = 6
+
+            if = {
+                limit = { has_variable = half_repayment }
+                set_variable = { name = agot_dash_next_payment value = var:half_repayment }
+            }
+            else = {
+                set_variable = { name = agot_dash_next_payment value = var:total_repayment }
+                change_variable = { name = agot_dash_next_payment divide = 2 }
+            }
+
+            root = {
+                add_to_variable_list = {
+                    name = agot_dash_incoming_list
+                    target = prev
+                }
+            }
+        }
+    }
+    else_if = {
+        limit = { var:agot_dash_bank_id = 4 }
+
+        ordered_in_global_list = {
+            variable = bank3_Shareholder
+            limit = { has_character_flag = bank3_Director }
+            max = 1
+
+            set_variable = { name = agot_dash_mgr_stew value = stewardship }
+            set_variable = { name = agot_dash_mgr_dip value = diplomacy }
+
+            root = {
+                add_to_variable_list = {
+                    name = agot_dash_manager_list
+                    target = prev
+                }
+            }
+        }
+
+        ordered_in_global_list = {
+            variable = bank3_Important_Debtors
+            limit = { has_variable = total_repayment }
+            order_by = { value = var:total_repayment }
+            max = 20
+
+            set_variable = { name = agot_dash_gain_abs value = var:total_repayment }
+            change_variable = { name = agot_dash_gain_abs subtract = var:loaned_amount }
+            set_variable = { name = agot_dash_gain_pct value = var:agot_dash_gain_abs }
+            if = {
+                limit = { var:loaned_amount > 0 }
+                change_variable = { name = agot_dash_gain_pct multiply = 100 }
+                change_variable = { name = agot_dash_gain_pct divide = var:loaned_amount }
+            }
+            else = {
+                set_variable = { name = agot_dash_gain_pct value = 0 }
+            }
+            set_variable = { name = agot_dash_paid_amount value = 0 }
+
+            root = {
+                add_to_variable_list = {
+                    name = agot_dash_debtors_list
+                    target = prev
+                }
+            }
+        }
+
+        ordered_in_global_list = {
+            variable = bank3_Important_Debtors
+            limit = { has_variable = total_repayment }
+            order_by = { value = var:total_repayment }
+            max = 6
+
+            if = {
+                limit = { has_variable = half_repayment }
+                set_variable = { name = agot_dash_next_payment value = var:half_repayment }
+            }
+            else = {
+                set_variable = { name = agot_dash_next_payment value = var:total_repayment }
+                change_variable = { name = agot_dash_next_payment divide = 2 }
+            }
+
+            root = {
+                add_to_variable_list = {
+                    name = agot_dash_incoming_list
+                    target = prev
+                }
+            }
+        }
+    }
+}
+
+agot_bank_dashboard_cleanup_widget_data_effect = {
+    clear_variable_list = agot_dash_debtors_list
+    clear_variable_list = agot_dash_incoming_list
+    clear_variable_list = agot_dash_manager_list
+}
+
+agot_bank_dashboard_apply_safe_policy_effect = {
+    if = {
+        limit = { var:agot_dash_bank_id = 1 }
+        set_global_variable = { name = IB_RiskLevel value = 3 }
+        set_global_variable = { name = IB_InterestLevel value = 0 }
+        set_global_variable = { name = IB_DividendLevel value = 0.75 }
+    }
+    else_if = {
+        limit = { var:agot_dash_bank_id = 2 }
+        set_global_variable = { name = bank1_RiskLevel value = 3 }
+        set_global_variable = { name = bank1_InterestLevel value = 0 }
+        set_global_variable = { name = bank1_DividendLevel value = 0.75 }
+    }
+    else_if = {
+        limit = { var:agot_dash_bank_id = 3 }
+        set_global_variable = { name = bank2_RiskLevel value = 3 }
+        set_global_variable = { name = bank2_InterestLevel value = 0 }
+        set_global_variable = { name = bank2_DividendLevel value = 0.75 }
+    }
+    else_if = {
+        limit = { var:agot_dash_bank_id = 4 }
+        set_global_variable = { name = bank3_RiskLevel value = 3 }
+        set_global_variable = { name = bank3_InterestLevel value = 0 }
+        set_global_variable = { name = bank3_DividendLevel value = 0.75 }
+    }
+}
+
+agot_bank_dashboard_apply_growth_policy_effect = {
+    if = {
+        limit = { var:agot_dash_bank_id = 1 }
+        set_global_variable = { name = IB_RiskLevel value = 6 }
+        set_global_variable = { name = IB_InterestLevel value = -1 }
+        set_global_variable = { name = IB_DividendLevel value = 0.50 }
+    }
+    else_if = {
+        limit = { var:agot_dash_bank_id = 2 }
+        set_global_variable = { name = bank1_RiskLevel value = 6 }
+        set_global_variable = { name = bank1_InterestLevel value = -1 }
+        set_global_variable = { name = bank1_DividendLevel value = 0.50 }
+    }
+    else_if = {
+        limit = { var:agot_dash_bank_id = 3 }
+        set_global_variable = { name = bank2_RiskLevel value = 6 }
+        set_global_variable = { name = bank2_InterestLevel value = -1 }
+        set_global_variable = { name = bank2_DividendLevel value = 0.50 }
+    }
+    else_if = {
+        limit = { var:agot_dash_bank_id = 4 }
+        set_global_variable = { name = bank3_RiskLevel value = 6 }
+        set_global_variable = { name = bank3_InterestLevel value = -1 }
+        set_global_variable = { name = bank3_DividendLevel value = 0.50 }
+    }
+}
+
+agot_bank_dashboard_apply_aggressive_policy_effect = {
+    if = {
+        limit = { var:agot_dash_bank_id = 1 }
+        set_global_variable = { name = IB_RiskLevel value = 18 }
+        set_global_variable = { name = IB_InterestLevel value = 1 }
+        set_global_variable = { name = IB_DividendLevel value = 0.25 }
+    }
+    else_if = {
+        limit = { var:agot_dash_bank_id = 2 }
+        set_global_variable = { name = bank1_RiskLevel value = 18 }
+        set_global_variable = { name = bank1_InterestLevel value = 1 }
+        set_global_variable = { name = bank1_DividendLevel value = 0.25 }
+    }
+    else_if = {
+        limit = { var:agot_dash_bank_id = 3 }
+        set_global_variable = { name = bank2_RiskLevel value = 18 }
+        set_global_variable = { name = bank2_InterestLevel value = 1 }
+        set_global_variable = { name = bank2_DividendLevel value = 0.25 }
+    }
+    else_if = {
+        limit = { var:agot_dash_bank_id = 4 }
+        set_global_variable = { name = bank3_RiskLevel value = 18 }
+        set_global_variable = { name = bank3_InterestLevel value = 1 }
+        set_global_variable = { name = bank3_DividendLevel value = 0.25 }
+    }
+}
+
+agot_bank_dashboard_apply_interest_low_effect = {
+    if = { limit = { var:agot_dash_bank_id = 1 } set_global_variable = { name = IB_InterestLevel value = -1 } }
+    else_if = { limit = { var:agot_dash_bank_id = 2 } set_global_variable = { name = bank1_InterestLevel value = -1 } }
+    else_if = { limit = { var:agot_dash_bank_id = 3 } set_global_variable = { name = bank2_InterestLevel value = -1 } }
+    else_if = { limit = { var:agot_dash_bank_id = 4 } set_global_variable = { name = bank3_InterestLevel value = -1 } }
+}
+
+agot_bank_dashboard_apply_interest_mid_effect = {
+    if = { limit = { var:agot_dash_bank_id = 1 } set_global_variable = { name = IB_InterestLevel value = 0 } }
+    else_if = { limit = { var:agot_dash_bank_id = 2 } set_global_variable = { name = bank1_InterestLevel value = 0 } }
+    else_if = { limit = { var:agot_dash_bank_id = 3 } set_global_variable = { name = bank2_InterestLevel value = 0 } }
+    else_if = { limit = { var:agot_dash_bank_id = 4 } set_global_variable = { name = bank3_InterestLevel value = 0 } }
+}
+
+agot_bank_dashboard_apply_interest_high_effect = {
+    if = { limit = { var:agot_dash_bank_id = 1 } set_global_variable = { name = IB_InterestLevel value = 1 } }
+    else_if = { limit = { var:agot_dash_bank_id = 2 } set_global_variable = { name = bank1_InterestLevel value = 1 } }
+    else_if = { limit = { var:agot_dash_bank_id = 3 } set_global_variable = { name = bank2_InterestLevel value = 1 } }
+    else_if = { limit = { var:agot_dash_bank_id = 4 } set_global_variable = { name = bank3_InterestLevel value = 1 } }
+}
+
+agot_bank_dashboard_apply_loans_restrict_effect = {
+    if = { limit = { var:agot_dash_bank_id = 1 } set_global_variable = { name = IB_RiskLevel value = 3 } }
+    else_if = { limit = { var:agot_dash_bank_id = 2 } set_global_variable = { name = bank1_RiskLevel value = 3 } }
+    else_if = { limit = { var:agot_dash_bank_id = 3 } set_global_variable = { name = bank2_RiskLevel value = 3 } }
+    else_if = { limit = { var:agot_dash_bank_id = 4 } set_global_variable = { name = bank3_RiskLevel value = 3 } }
+}
+
+agot_bank_dashboard_apply_loans_balanced_effect = {
+    if = { limit = { var:agot_dash_bank_id = 1 } set_global_variable = { name = IB_RiskLevel value = 6 } }
+    else_if = { limit = { var:agot_dash_bank_id = 2 } set_global_variable = { name = bank1_RiskLevel value = 6 } }
+    else_if = { limit = { var:agot_dash_bank_id = 3 } set_global_variable = { name = bank2_RiskLevel value = 6 } }
+    else_if = { limit = { var:agot_dash_bank_id = 4 } set_global_variable = { name = bank3_RiskLevel value = 6 } }
+}
+
+agot_bank_dashboard_apply_loans_aggressive_effect = {
+    if = { limit = { var:agot_dash_bank_id = 1 } set_global_variable = { name = IB_RiskLevel value = 18 } }
+    else_if = { limit = { var:agot_dash_bank_id = 2 } set_global_variable = { name = bank1_RiskLevel value = 18 } }
+    else_if = { limit = { var:agot_dash_bank_id = 3 } set_global_variable = { name = bank2_RiskLevel value = 18 } }
+    else_if = { limit = { var:agot_dash_bank_id = 4 } set_global_variable = { name = bank3_RiskLevel value = 18 } }
+}
+
+agot_bank_dashboard_apply_dividend_high_effect = {
+    if = { limit = { var:agot_dash_bank_id = 1 } set_global_variable = { name = IB_DividendLevel value = 0.75 } }
+    else_if = { limit = { var:agot_dash_bank_id = 2 } set_global_variable = { name = bank1_DividendLevel value = 0.75 } }
+    else_if = { limit = { var:agot_dash_bank_id = 3 } set_global_variable = { name = bank2_DividendLevel value = 0.75 } }
+    else_if = { limit = { var:agot_dash_bank_id = 4 } set_global_variable = { name = bank3_DividendLevel value = 0.75 } }
+}
+
+agot_bank_dashboard_apply_dividend_balanced_effect = {
+    if = { limit = { var:agot_dash_bank_id = 1 } set_global_variable = { name = IB_DividendLevel value = 0.50 } }
+    else_if = { limit = { var:agot_dash_bank_id = 2 } set_global_variable = { name = bank1_DividendLevel value = 0.50 } }
+    else_if = { limit = { var:agot_dash_bank_id = 3 } set_global_variable = { name = bank2_DividendLevel value = 0.50 } }
+    else_if = { limit = { var:agot_dash_bank_id = 4 } set_global_variable = { name = bank3_DividendLevel value = 0.50 } }
+}
+
+agot_bank_dashboard_apply_dividend_reinvest_effect = {
+    if = { limit = { var:agot_dash_bank_id = 1 } set_global_variable = { name = IB_DividendLevel value = 0.25 } }
+    else_if = { limit = { var:agot_dash_bank_id = 2 } set_global_variable = { name = bank1_DividendLevel value = 0.25 } }
+    else_if = { limit = { var:agot_dash_bank_id = 3 } set_global_variable = { name = bank2_DividendLevel value = 0.25 } }
+    else_if = { limit = { var:agot_dash_bank_id = 4 } set_global_variable = { name = bank3_DividendLevel value = 0.25 } }
+}

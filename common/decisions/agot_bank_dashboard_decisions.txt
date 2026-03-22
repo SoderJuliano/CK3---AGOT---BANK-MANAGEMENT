@@ -1,0 +1,36 @@
+﻿agot_bank_dashboard_decision = {
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+    }
+    ai_check_interval_by_tier = {
+        barony = 0
+        county = 0
+        duchy = 0
+        kingdom = 0
+        empire = 0
+        hegemony = 0
+    }
+    desc = agot_bank_dashboard_decision_desc
+    decision_group_type = banking
+
+    is_shown = {
+        is_ai = no
+        is_adult = yes
+        agot_bank_dashboard_can_view_trigger = yes
+    }
+
+    is_valid = {
+        is_alive = yes
+        agot_bank_dashboard_can_view_trigger = yes
+    }
+
+    effect = {
+        trigger_event = {
+            id = agot_bank_dashboard.0001
+        }
+    }
+
+    ai_potential = {
+        always = no
+    }
+}
