@@ -15,9 +15,7 @@
  agot_bank_dashboard.0010.desc: "A consolidated AGOT dashboard for this bank: current cash, loan pressure, default pressure, and policy posture."
  agot_bank_dashboard.0010.a: "View current KPIs"
  agot_bank_dashboard.0010.b: "Open policy insights"
- agot_bank_dashboard.0010.c: "Open manager policy controls"
- agot_bank_dashboard.0010.d: "Open original AGOT management window"
- agot_bank_dashboard.0010.e: "Change bank"
+ agot_bank_dashboard.0010.c: "Bank Policy & Management"
  agot_bank_dashboard.0010.f: "Close"
 
  agot_bank_dashboard.0020.t: "Policy Insights"

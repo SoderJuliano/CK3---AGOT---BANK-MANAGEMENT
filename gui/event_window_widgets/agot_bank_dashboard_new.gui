@@ -1,7 +1,7 @@
 widget = {
 	allow_outside = yes
 	name = "agot_bank_dashboard_new"
-	size = { 860 310 }
+	size = { 860 380 }
 
 	vbox = {
 		layoutpolicy_horizontal = expanding

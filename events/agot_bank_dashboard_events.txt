@@ -110,37 +110,6 @@ agot_bank_dashboard.0010 = {
     }
 
     option = {
-        name = agot_bank_dashboard.0010.a
-        trigger = { var:agot_dash_bank_id = 1 }
-        custom_tooltip = agot_bank_dashboard_summary_ib_tt
-    }
-
-    option = {
-        name = agot_bank_dashboard.0010.a
-        trigger = { var:agot_dash_bank_id = 2 }
-        custom_tooltip = agot_bank_dashboard_summary_bank1_tt
-    }
-
-    option = {
-        name = agot_bank_dashboard.0010.a
-        trigger = { var:agot_dash_bank_id = 3 }
-        custom_tooltip = agot_bank_dashboard_summary_bank2_tt
-    }
-
-    option = {
-        name = agot_bank_dashboard.0010.a
-        trigger = { var:agot_dash_bank_id = 4 }
-        custom_tooltip = agot_bank_dashboard_summary_bank3_tt
-    }
-
-    option = {
-        name = agot_bank_dashboard.0010.b
-        trigger_event = {
-            id = agot_bank_dashboard.0020
-        }
-    }
-
-    option = {
         name = agot_bank_dashboard.0010.c
         trigger = {
             OR = {
@@ -163,15 +132,7 @@ agot_bank_dashboard.0010 = {
             }
         }
         trigger_event = {
-            id = agot_bank_dashboard.0030
-        }
-    }
-
-    option = {
-        name = agot_bank_dashboard.0010.e
-        agot_bank_dashboard_cleanup_widget_data_effect = yes
-        trigger_event = {
-            id = agot_bank_dashboard.0001
+            id = agot_bank_dashboard.0020
         }
     }
 
