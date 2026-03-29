@@ -1,187 +1,395 @@
-﻿widget = {
-allow_outside = yes
-name = "agot_bank_policy_insights_new"
-size = { 860 360 }
+widget = {
+	allow_outside = yes
+	name = "agot_bank_policy_insights_new"
+	size = { 860 370 }
 
-vbox = {
-layoutpolicy_horizontal = expanding
-layoutpolicy_vertical = expanding
-spacing = 10
-margin = { 14 10 14 10 }
+	vbox = {
+		layoutpolicy_horizontal = expanding
+		layoutpolicy_vertical = expanding
+		spacing = 6
+		margin = { 12 8 12 8 }
+		background = { color = { 0.04 0.04 0.08 0.98 } }
 
-# HEADER
-vbox = {
-layoutpolicy_horizontal = expanding
-layoutpolicy_vertical = preferred
-spacing = 3
+		# === HEADER ===
+		hbox = {
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = preferred
+			spacing = 8
+			margin = { 2 2 2 2 }
+			icon = { size = { 22 22 } texture = "gfx/interface/icons/icon_gold.dds" }
+			text_single = {
+				layoutpolicy_horizontal = expanding
+				text = agot_dash_pi_title
+				fontsize = 15
+				default_format = "#P"
+				align = nobaseline|left
+			}
+			text_single = {
+				text = agot_dash_pi_projection
+				fontsize = 9
+				default_format = "#weak"
+				align = nobaseline|right
+			}
+		}
 
-text_single = {
-text = agot_bank_dashboard_policy_widget_title
-fontsize = 18
-fontsize_min = 14
-default_format = "#high"
-align = left
-}
+		divider_light = { layoutpolicy_horizontal = expanding size = { 0 1 } }
 
-text_single = {
-text = agot_bank_dashboard_policy_widget_projection
-fontsize = 10
-fontsize_min = 8
-default_format = "#medium"
-align = left
-}
-}
+		# === 3 CATEGORY PANELS ===
+		hbox = {
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			spacing = 6
 
-divider_light = {
-layoutpolicy_horizontal = expanding
-size = { 0 1 }
-}
+			# ---- INTEREST RATE ----
+			vbox = {
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				spacing = 3
 
-# TABLE HEADER
-hbox = {
-layoutpolicy_horizontal = expanding
-layoutpolicy_vertical = preferred
-spacing = 8
-margin = { 4 0 4 0 }
+				# Category header
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = preferred
+					spacing = 6
+					margin = { 6 6 6 6 }
+					background = { color = { 0.10 0.14 0.24 1.0 } }
+					icon = { size = { 16 16 } texture = "gfx/interface/icons/icon_gold.dds" }
+					text_single = {
+						layoutpolicy_horizontal = expanding
+						text = agot_dash_pi_cat_interest
+						fontsize = 12
+						default_format = "#bold"
+						align = nobaseline|left
+					}
+				}
 
-text_single = {
-size = { 150 0 }
-text = agot_dash_policy_col_category
-fontsize = 10
-fontsize_min = 8
-default_format = "#bold"
-align = left
-}
-text_single = {
-size = { 100 0 }
-text = agot_dash_policy_col_level
-fontsize = 10
-fontsize_min = 8
-default_format = "#bold"
-align = left
-}
-text_single = {
-layoutpolicy_horizontal = expanding
-text = agot_dash_policy_col_impact
-fontsize = 10
-fontsize_min = 8
-default_format = "#bold"
-align = left
-}
-}
+				# LOW — green row
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = preferred
+					spacing = 6
+					margin = { 0 0 0 0 }
+					background = { color = { 0.05 0.14 0.05 1.0 } }
+					widget = { size = { 5 36 } background = { color = { 0.25 0.78 0.35 1.0 } } }
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 1
+						margin = { 6 5 6 5 }
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							text = agot_dash_pi_int_low_name
+							fontsize = 11
+							default_format = "#good"
+							align = nobaseline|left
+						}
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							text = agot_dash_pi_int_low_desc
+							fontsize = 9
+							default_format = "#weak"
+							align = nobaseline|left
+						}
+					}
+				}
 
-divider_light = {
-layoutpolicy_horizontal = expanding
-size = { 0 1 }
-}
+				# MEDIUM — yellow row
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = preferred
+					spacing = 6
+					margin = { 0 0 0 0 }
+					background = { color = { 0.12 0.12 0.04 1.0 } }
+					widget = { size = { 5 36 } background = { color = { 0.88 0.72 0.15 1.0 } } }
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 1
+						margin = { 6 5 6 5 }
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							text = agot_dash_pi_int_mid_name
+							fontsize = 11
+							default_format = "#medium"
+							align = nobaseline|left
+						}
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							text = agot_dash_pi_int_mid_desc
+							fontsize = 9
+							default_format = "#weak"
+							align = nobaseline|left
+						}
+					}
+				}
 
-# TABLE ROWS
-scrollbox = {
-layoutpolicy_horizontal = expanding
-layoutpolicy_vertical = expanding
+				# HIGH — red row
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = preferred
+					spacing = 6
+					margin = { 0 0 0 0 }
+					background = { color = { 0.16 0.05 0.04 1.0 } }
+					widget = { size = { 5 36 } background = { color = { 0.90 0.28 0.12 1.0 } } }
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 1
+						margin = { 6 5 6 5 }
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							text = agot_dash_pi_int_high_name
+							fontsize = 11
+							default_format = "#warning"
+							align = nobaseline|left
+						}
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							text = agot_dash_pi_int_high_desc
+							fontsize = 9
+							default_format = "#weak"
+							align = nobaseline|left
+						}
+					}
+				}
 
-blockoverride "scrollbox_content" {
-vbox = {
-layoutpolicy_horizontal = expanding
-spacing = 0
+				expand = {}
+			}
 
-# --- INTEREST RATES ---
-hbox = {
-layoutpolicy_horizontal = expanding
-layoutpolicy_vertical = preferred
-spacing = 8
-margin = { 4 4 4 4 }
-background = "gfx/interface/window_background_2"
-text_single = { size = { 150 0 } text = agot_dash_policy_cat_interest fontsize = 10 default_format = "#medium" align = left }
-text_single = { size = { 100 0 } text = agot_dash_policy_lvl_low fontsize = 10 default_format = "#accent" align = left }
-text_single = { layoutpolicy_horizontal = expanding text = agot_bank_dashboard_policy_row_interest_low fontsize = 10 default_format = "#weak" align = left }
-}
-hbox = {
-layoutpolicy_horizontal = expanding
-layoutpolicy_vertical = preferred
-spacing = 8
-margin = { 4 4 4 4 }
-text_single = { size = { 150 0 } text = "" fontsize = 10 align = left }
-text_single = { size = { 100 0 } text = agot_dash_policy_lvl_medium fontsize = 10 default_format = "#good" align = left }
-text_single = { layoutpolicy_horizontal = expanding text = agot_bank_dashboard_policy_row_interest_mid fontsize = 10 default_format = "#weak" align = left }
-}
-hbox = {
-layoutpolicy_horizontal = expanding
-layoutpolicy_vertical = preferred
-spacing = 8
-margin = { 4 4 4 4 }
-background = "gfx/interface/window_background_2"
-text_single = { size = { 150 0 } text = "" fontsize = 10 align = left }
-text_single = { size = { 100 0 } text = agot_dash_policy_lvl_high fontsize = 10 default_format = "#warning" align = left }
-text_single = { layoutpolicy_horizontal = expanding text = agot_bank_dashboard_policy_row_interest_high fontsize = 10 default_format = "#weak" align = left }
-}
+			divider_light = { size = { 1 0 } layoutpolicy_vertical = expanding }
 
-divider_light = { layoutpolicy_horizontal = expanding size = { 0 1 } }
+			# ---- LOAN APPROVAL ----
+			vbox = {
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				spacing = 3
 
-# --- LOAN APPROVAL ---
-hbox = {
-layoutpolicy_horizontal = expanding
-layoutpolicy_vertical = preferred
-spacing = 8
-margin = { 4 4 4 4 }
-text_single = { size = { 150 0 } text = agot_dash_policy_cat_loans fontsize = 10 default_format = "#medium" align = left }
-text_single = { size = { 100 0 } text = agot_dash_policy_lvl_restrictive fontsize = 10 default_format = "#accent" align = left }
-text_single = { layoutpolicy_horizontal = expanding text = agot_bank_dashboard_policy_row_approval_restrict fontsize = 10 default_format = "#weak" align = left }
-}
-hbox = {
-layoutpolicy_horizontal = expanding
-layoutpolicy_vertical = preferred
-spacing = 8
-margin = { 4 4 4 4 }
-background = "gfx/interface/window_background_2"
-text_single = { size = { 150 0 } text = "" fontsize = 10 align = left }
-text_single = { size = { 100 0 } text = agot_dash_policy_lvl_balanced fontsize = 10 default_format = "#good" align = left }
-text_single = { layoutpolicy_horizontal = expanding text = agot_bank_dashboard_policy_row_approval_balanced fontsize = 10 default_format = "#weak" align = left }
-}
-hbox = {
-layoutpolicy_horizontal = expanding
-layoutpolicy_vertical = preferred
-spacing = 8
-margin = { 4 4 4 4 }
-text_single = { size = { 150 0 } text = "" fontsize = 10 align = left }
-text_single = { size = { 100 0 } text = agot_dash_policy_lvl_aggressive fontsize = 10 default_format = "#warning" align = left }
-text_single = { layoutpolicy_horizontal = expanding text = agot_bank_dashboard_policy_row_approval_aggressive fontsize = 10 default_format = "#weak" align = left }
-}
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = preferred
+					spacing = 6
+					margin = { 6 6 6 6 }
+					background = { color = { 0.10 0.14 0.24 1.0 } }
+					icon = { size = { 16 16 } texture = "gfx/interface/icons/icon_gold.dds" }
+					text_single = {
+						layoutpolicy_horizontal = expanding
+						text = agot_dash_pi_cat_loans
+						fontsize = 12
+						default_format = "#bold"
+						align = nobaseline|left
+					}
+				}
 
-divider_light = { layoutpolicy_horizontal = expanding size = { 0 1 } }
+				# RESTRICTIVE — green
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = preferred
+					spacing = 6
+					margin = { 0 0 0 0 }
+					background = { color = { 0.05 0.14 0.05 1.0 } }
+					widget = { size = { 5 36 } background = { color = { 0.25 0.78 0.35 1.0 } } }
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 1
+						margin = { 6 5 6 5 }
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							text = agot_dash_pi_loans_rest_name
+							fontsize = 11
+							default_format = "#good"
+							align = nobaseline|left
+						}
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							text = agot_dash_pi_loans_rest_desc
+							fontsize = 9
+							default_format = "#weak"
+							align = nobaseline|left
+						}
+					}
+				}
 
-# --- DIVIDENDS ---
-hbox = {
-layoutpolicy_horizontal = expanding
-layoutpolicy_vertical = preferred
-spacing = 8
-margin = { 4 4 4 4 }
-background = "gfx/interface/window_background_2"
-text_single = { size = { 150 0 } text = agot_dash_policy_cat_dividends fontsize = 10 default_format = "#medium" align = left }
-text_single = { size = { 100 0 } text = agot_dash_policy_lvl_high fontsize = 10 default_format = "#accent" align = left }
-text_single = { layoutpolicy_horizontal = expanding text = agot_bank_dashboard_policy_row_dividend_high fontsize = 10 default_format = "#weak" align = left }
-}
-hbox = {
-layoutpolicy_horizontal = expanding
-layoutpolicy_vertical = preferred
-spacing = 8
-margin = { 4 4 4 4 }
-text_single = { size = { 150 0 } text = "" fontsize = 10 align = left }
-text_single = { size = { 100 0 } text = agot_dash_policy_lvl_balanced fontsize = 10 default_format = "#good" align = left }
-text_single = { layoutpolicy_horizontal = expanding text = agot_bank_dashboard_policy_row_dividend_balanced fontsize = 10 default_format = "#weak" align = left }
-}
-hbox = {
-layoutpolicy_horizontal = expanding
-layoutpolicy_vertical = preferred
-spacing = 8
-margin = { 4 4 4 4 }
-background = "gfx/interface/window_background_2"
-text_single = { size = { 150 0 } text = "" fontsize = 10 align = left }
-text_single = { size = { 100 0 } text = agot_dash_policy_lvl_reinvest fontsize = 10 default_format = "#warning" align = left }
-text_single = { layoutpolicy_horizontal = expanding text = agot_bank_dashboard_policy_row_dividend_reinvest fontsize = 10 default_format = "#weak" align = left }
-}
-}
-}
-}
-}
+				# BALANCED — yellow
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = preferred
+					spacing = 6
+					margin = { 0 0 0 0 }
+					background = { color = { 0.12 0.12 0.04 1.0 } }
+					widget = { size = { 5 36 } background = { color = { 0.88 0.72 0.15 1.0 } } }
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 1
+						margin = { 6 5 6 5 }
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							text = agot_dash_pi_loans_bal_name
+							fontsize = 11
+							default_format = "#medium"
+							align = nobaseline|left
+						}
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							text = agot_dash_pi_loans_bal_desc
+							fontsize = 9
+							default_format = "#weak"
+							align = nobaseline|left
+						}
+					}
+				}
+
+				# AGGRESSIVE — red
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = preferred
+					spacing = 6
+					margin = { 0 0 0 0 }
+					background = { color = { 0.16 0.05 0.04 1.0 } }
+					widget = { size = { 5 36 } background = { color = { 0.90 0.28 0.12 1.0 } } }
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 1
+						margin = { 6 5 6 5 }
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							text = agot_dash_pi_loans_agg_name
+							fontsize = 11
+							default_format = "#warning"
+							align = nobaseline|left
+						}
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							text = agot_dash_pi_loans_agg_desc
+							fontsize = 9
+							default_format = "#weak"
+							align = nobaseline|left
+						}
+					}
+				}
+
+				expand = {}
+			}
+
+			divider_light = { size = { 1 0 } layoutpolicy_vertical = expanding }
+
+			# ---- DIVIDENDS ----
+			vbox = {
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				spacing = 3
+
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = preferred
+					spacing = 6
+					margin = { 6 6 6 6 }
+					background = { color = { 0.10 0.14 0.24 1.0 } }
+					icon = { size = { 16 16 } texture = "gfx/interface/icons/icon_gold.dds" }
+					text_single = {
+						layoutpolicy_horizontal = expanding
+						text = agot_dash_pi_cat_dividends
+						fontsize = 12
+						default_format = "#bold"
+						align = nobaseline|left
+					}
+				}
+
+				# HIGH PAYOUT — green
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = preferred
+					spacing = 6
+					margin = { 0 0 0 0 }
+					background = { color = { 0.05 0.14 0.05 1.0 } }
+					widget = { size = { 5 36 } background = { color = { 0.25 0.78 0.35 1.0 } } }
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 1
+						margin = { 6 5 6 5 }
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							text = agot_dash_pi_div_high_name
+							fontsize = 11
+							default_format = "#good"
+							align = nobaseline|left
+						}
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							text = agot_dash_pi_div_high_desc
+							fontsize = 9
+							default_format = "#weak"
+							align = nobaseline|left
+						}
+					}
+				}
+
+				# BALANCED — yellow
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = preferred
+					spacing = 6
+					margin = { 0 0 0 0 }
+					background = { color = { 0.12 0.12 0.04 1.0 } }
+					widget = { size = { 5 36 } background = { color = { 0.88 0.72 0.15 1.0 } } }
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 1
+						margin = { 6 5 6 5 }
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							text = agot_dash_pi_div_bal_name
+							fontsize = 11
+							default_format = "#medium"
+							align = nobaseline|left
+						}
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							text = agot_dash_pi_div_bal_desc
+							fontsize = 9
+							default_format = "#weak"
+							align = nobaseline|left
+						}
+					}
+				}
+
+				# REINVEST — blue
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = preferred
+					spacing = 6
+					margin = { 0 0 0 0 }
+					background = { color = { 0.05 0.08 0.16 1.0 } }
+					widget = { size = { 5 36 } background = { color = { 0.22 0.52 0.92 1.0 } } }
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 1
+						margin = { 6 5 6 5 }
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							text = agot_dash_pi_div_reinv_name
+							fontsize = 11
+							default_format = "#accent"
+							align = nobaseline|left
+						}
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							text = agot_dash_pi_div_reinv_desc
+							fontsize = 9
+							default_format = "#weak"
+							align = nobaseline|left
+						}
+					}
+				}
+
+				expand = {}
+			}
+		}
+
+		divider_light = { layoutpolicy_horizontal = expanding size = { 0 1 } }
+
+		text_single = {
+			layoutpolicy_horizontal = expanding
+			text = agot_dash_pi_footer
+			fontsize = 9
+			default_format = "#weak"
+			align = center
+		}
+	}
 }

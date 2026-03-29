@@ -8,7 +8,7 @@ widget = {
 		layoutpolicy_vertical = expanding
 		spacing = 6
 		margin = { 10 6 10 6 }
-		background = { color = { 0 0 0 0.4 } }
+		background = { color = { 0.04 0.04 0.08 0.98 } }
 
 		# ===== HEADER =====
 		hbox = {
@@ -29,11 +29,6 @@ widget = {
 				text_single = { text = agot_dash_user_greeting fontsize = 13 default_format = "#bold" align = right }
 				text_single = { text = agot_dash_user_id fontsize = 10 default_format = "#weak" align = right }
 				text_single = { text = agot_dash_profile_complete fontsize = 10 default_format = "#good" align = right }
-			}
-			widget = {
-				datacontext = "[GetPlayer]"
-				size = { 60 60 }
-				portrait_head_small = { scale = 0.7 tooltip_visible = no }
 			}
 		}
 		divider_light = { layoutpolicy_horizontal = expanding size = { 0 1 } }
@@ -116,7 +111,7 @@ widget = {
 					spacing = 3
 					text_single = { text = agot_dash_kpi_loan_label fontsize = 9 default_format = "#accent" align = left }
 					text_single = { text = agot_dash_kpi_loan_sub fontsize = 10 default_format = "#weak" align = left }
-					text_single = { text = agot_dash_kpi_loan_value fontsize = 18 default_format = "#high" align = left }
+					text_single = { text = agot_dash_kpi_loan_value fontsize = 18 default_format = "#P" align = left }
 				}
 				}
 				vbox = {
